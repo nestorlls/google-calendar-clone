@@ -56,14 +56,14 @@ const EventModal = () => {
       <form
         className="bg-white rounded-lg shadow-2xl w-1/4 dark:bg-gray-800"
         onSubmit={handleSubmit}>
-        <header className="bg-gray-100 px-4 py-2 flex justify-between items-center dark:bg-gray-900">
+        <header className="bg-gray-200 px-4 py-2 flex justify-between items-center dark:bg-gray-900">
           <span className="text-gray-400 dark:text-gray-200">
             <TbMenu />
           </span>
           <div className="flex gap-2">
             {selectedEvent && (
               <span
-                className="text-gray-400 cursor-pointer dark:text-gray-200"
+                className="text-gray-700 cursor-pointer dark:text-gray-200"
                 onClick={() => {
                   dispatchCalEvent({ type: 'delete', payload: selectedEvent });
                   setShowEventModal(false);
@@ -72,7 +72,7 @@ const EventModal = () => {
               </span>
             )}
             <button
-              className="text-gray-400 dark:text-gray-200"
+              className="text-gray-700 dark:text-gray-200"
               onClick={() => setShowEventModal(false)}>
               <AiOutlineClose />
             </button>
