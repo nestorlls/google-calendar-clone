@@ -1,4 +1,5 @@
 import { CreateEventButton } from './CreateEventButton';
+import Labels from './Labels';
 import SmallCalendar from './SmallCalendar';
 
 const Sidebar = () => {
@@ -6,6 +7,7 @@ const Sidebar = () => {
     <aside className="border p-5 w-72 ">
       <CreateEventButton />
       <SmallCalendar />
+      <Labels />
     </aside>
   );
 };

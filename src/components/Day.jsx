@@ -10,16 +10,20 @@ const getCurrentDayClass = (day) => {
 };
 
 const Day = ({ day, rowIndex }) => {
-  const { setDaySelected, setShowEventModal, savedEvents, setSelectedEvent } =
-    useContext(GlobalContext);
+  const {
+    setDaySelected,
+    setShowEventModal,
+    filteredEvents,
+    setSelectedEvent,
+  } = useContext(GlobalContext);
   const [dayEvents, setDayEvents] = useState([]);
 
   useEffect(() => {
-    const events = savedEvents.filter(
+    const events = filteredEvents.filter(
       (event) => dayjs(event.day).format('DD-MM-YY') === day.format('DD-MM-YY')
     );
     setDayEvents(events);
-  }, [savedEvents, day]);
+  }, [filteredEvents, day]);
 
   const currentClass = getCurrentDayClass(day);
 
