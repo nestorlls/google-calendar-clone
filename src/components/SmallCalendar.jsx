@@ -33,9 +33,9 @@ const SmallCalendar = () => {
     const slcDay = daySelected && daySelected.format(format);
 
     if (nowDay === currentDay) {
-      return 'bg-blue-600 text-white rounded-full';
+      return 'bg-blue-600 text-white rounded-full dark:text-gray-100';
     } else if (slcDay === currentDay) {
-      return 'bg-blue-100 text-blue-600 rounded-full';
+      return 'bg-blue-200 text-gray-800 rounded-full dark:text-gray-800';
     }
     return '';
   };
@@ -43,7 +43,7 @@ const SmallCalendar = () => {
   return (
     <div className="mt-9 ">
       <header className="flex justify-between">
-        <p className="text-gray-500 font-bold">
+        <p className="text-gray-500 font-bold dark:text-gray-200">
           {dayjs(new Date(dayjs().year(), currentMonthIndex)).format(
             'MMMM YYYY'
           )}
@@ -53,21 +53,23 @@ const SmallCalendar = () => {
             <MdKeyboardArrowLeft
               title="Go to previous month"
               size={30}
-              className="cursor-pointer text-gray-600 mx-2"
+              className="cursor-pointer text-gray-600 mx-2 dark:text-gray-200"
             />
           </button>
           <button onClick={handleNextMonth}>
             <MdKeyboardArrowRight
               title="Go to next month"
               size={30}
-              className="cursor-pointer text-gray-600 mx-2"
+              className="cursor-pointer text-gray-600 mx-2 dark:text-gray-200"
             />
           </button>
         </div>
       </header>
       <div className="grid grid-cols-7 grid-rows-6">
         {currentMonth[0].map((day, index) => (
-          <span key={index} className="text-sm py-1 text-center">
+          <span
+            key={index}
+            className="text-sm py-1 text-center text-gray-800 dark:text-gray-100">
             {day.format('dd').charAt(0)}
           </span>
         ))}
@@ -76,7 +78,7 @@ const SmallCalendar = () => {
             {row.map((day, index) => (
               <button
                 key={index}
-                className={`py-1 w-full ${getDayClass(day)}`}
+                className={`py-1 w-full dark:text-gray-100 ${getDayClass(day)}`}
                 onClick={() => setSmallCalendarMonth(currentMonthIndex)}
                 onClickCapture={() => setDaySelected(day)}>
                 <span className="text-sm ">{day.format('D')}</span>

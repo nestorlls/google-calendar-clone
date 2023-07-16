@@ -54,16 +54,16 @@ const EventModal = () => {
   return (
     <div className="h-screen w-full fixed left-0 top-0 bottom-0 right-0 flex justify-center items-center">
       <form
-        className="bg-white rounded-lg shadow-2xl w-1/4"
+        className="bg-white rounded-lg shadow-2xl w-1/4 dark:bg-gray-800"
         onSubmit={handleSubmit}>
-        <header className="bg-gray-100 px-4 py-2 flex justify-between items-center">
-          <span className="text-gray-400">
+        <header className="bg-gray-100 px-4 py-2 flex justify-between items-center dark:bg-gray-900">
+          <span className="text-gray-400 dark:text-gray-200">
             <TbMenu />
           </span>
           <div className="flex gap-2">
             {selectedEvent && (
               <span
-                className="text-gray-400 cursor-pointer"
+                className="text-gray-400 cursor-pointer dark:text-gray-200"
                 onClick={() => {
                   dispatchCalEvent({ type: 'delete', payload: selectedEvent });
                   setShowEventModal(false);
@@ -72,7 +72,7 @@ const EventModal = () => {
               </span>
             )}
             <button
-              className="text-gray-400"
+              className="text-gray-400 dark:text-gray-200"
               onClick={() => setShowEventModal(false)}>
               <AiOutlineClose />
             </button>
@@ -88,14 +88,16 @@ const EventModal = () => {
               placeholder="add title"
               value={inputValues.title}
               required
-              className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:ring-blue-400 placeholder:text-gray-300"
+              className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:ring-blue-400 placeholder:text-gray-300 dark:placeholder:text-gray-500 dark:text-gray-100 dark:bg-gray-800 dark:focus:ring-blue-100"
               onChange={handleChange}
             />
-            <span className="text-gray-400">
+            <span className="text-gray-400 dark:text-gray-200">
               <AiOutlineClockCircle />
             </span>
-            <p>{daySelected?.format('dddd, MMMM DD')}</p>
-            <span className="text-gray-400">
+            <p className="text-gray-800 dark:text-gray-100">
+              {daySelected?.format('dddd, MMMM DD')}
+            </p>
+            <span className="text-gray-400 dark:text-gray-200">
               <MdSegment />
             </span>
             <input
@@ -105,10 +107,10 @@ const EventModal = () => {
               placeholder="add description"
               value={inputValues.description}
               required
-              className="pt-3 border-0 text-gray-600 font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:ring-blue-400 placeholder:text-gray-300"
+              className="pt-3 border-0 text-gray-600 font-semibold pb-2 w-full border-b-2 border-gray-200 focus:outline-none focus:ring-0 focus:ring-blue-400 placeholder:text-gray-300 dark:placeholder:text-gray-500 dark:text-gray-100 dark:bg-gray-800"
               onChange={handleChange}
             />
-            <span className="text-gray-400">
+            <span className="text-gray-400 dark:text-gray-200">
               <BsBookmark />
             </span>
             <div className="flex gap-x-2">

@@ -27,7 +27,7 @@ const Labels = () => {
                 labelsClasses[lbl.split('-')[1]]
               } rounded focus:ring-0 cursor-pointer `}
             />
-            <span className="ml-2 text-gray-700 capitalize">
+            <span className="ml-2 text-gray-700 capitalize dark:text-gray-200">
               {lbl.split('-')[1]}
             </span>
           </label>

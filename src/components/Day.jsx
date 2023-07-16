@@ -28,8 +28,8 @@ const Day = ({ day, rowIndex }) => {
   const currentClass = getCurrentDayClass(day);
 
   return (
-    <div className="border border-gray-200 flex flex-col">
-      <header className="flex flex-col items-center">
+    <div className="border border-gray-300 flex flex-col dark:border-gray-600">
+      <header className="flex flex-col items-center text-gray-800 dark:text-gray-100">
         {rowIndex % 7 === 0 && (
           <p className="text-sm mt-1">{day.format('ddd').toUpperCase()}</p>
         )}
@@ -47,7 +47,7 @@ const Day = ({ day, rowIndex }) => {
           <div
             key={idx}
             onClick={() => setSelectedEvent(event)}
-            className={`${event.label} p-2 mr-3 text-gray-100 text-sm rounded mb-1 truncate`}>
+            className={`${event.label} p-2 mr-3 text-gray-100 dark:text-gray-950 text-sm rounded mb-1 truncate`}>
             {event.title}
           </div>
         ))}

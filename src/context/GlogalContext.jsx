@@ -16,6 +16,8 @@ const GlobalContext = createContext({
   labels: [],
   setLabels: () => {},
   filteredEvents: [],
+  darkMode: false,
+  setDarkMode: () => {},
 });
 
 export default GlobalContext;

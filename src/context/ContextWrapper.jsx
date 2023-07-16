@@ -30,6 +30,7 @@ const ContextWrapper = ({ children }) => {
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [labels, setLabels] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
   const [savedEvents, dispatchCalEvent] = useReducer(
     savedEventReduces,
     [],
@@ -93,6 +94,8 @@ const ContextWrapper = ({ children }) => {
         setLabels,
         updateLabel,
         filteredEvents,
+        darkMode,
+        setDarkMode,
       }}>
       {children}
     </GlobalContext.Provider>

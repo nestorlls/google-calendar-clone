@@ -9,7 +9,7 @@ import EventModal from './components/EventModal';
 
 const App = () => {
   const [currentMonth, setcurrentMonth] = useState(getMonth());
-  const { monthIndex, showEventModal } = useContext(GlobalContext);
+  const { monthIndex, showEventModal, darkMode } = useContext(GlobalContext);
 
   useEffect(() => {
     setcurrentMonth(getMonth(monthIndex));
@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col">
+      <div className={`h-screen flex flex-col ${darkMode && 'dark'}`}>
         {showEventModal && <EventModal />}
         <CalendarHeader />
         <div className="flex flex-1">
