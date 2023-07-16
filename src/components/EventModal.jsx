@@ -19,8 +19,6 @@ const EventModal = () => {
   const { setShowEventModal, daySelected, dispatchCalEvent, selectedEvent } =
     useContext(GlobalContext);
 
-  console.log(selectedEvent);
-
   const [selectedLabel, setSelectedLabel] = useState(
     selectedEvent ? selectedEvent.label : labelsClasses[0]
   );
