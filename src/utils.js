@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 
 export const getMonth = (month = dayjs().month()) => {
   const year = dayjs().year();
+  month = Math.floor(month);
 
   const firstDayOfMonth = dayjs(new Date(year, month, 1)).day();
 
